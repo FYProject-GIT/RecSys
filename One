@@ -1,0 +1,58 @@
+sagar@sagar-Inspiron-5559:~$ python
+Python 2.7.15rc1 (default, Nov 12 2018, 14:31:15) 
+[GCC 7.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> from pandas import read_csv
+>>> from pandas import datetime
+>>> from matplotlib import pyplot
+>>> 
+>>> import os
+>>> import os.path
+>>> from os import listdir
+>>> from os.path import isfile, join
+>>> import numpy as np
+>>> import matplotlib.pyplot as plt
+>>> import pandas as pd
+>>> 
+>>> from matplotlib.ticker import NullFormatter  # useful for `logit` scale
+>>> from datetime import datetime
+>>> books = pd.read_csv('Books.csv', sep=';', error_bad_lines=False,encoding="latin-1")
+Skipping line 6452: expected 8 fields, saw 9
+Skipping line 43667: expected 8 fields, saw 10
+Skipping line 51751: expected 8 fields, saw 9
+​
+Skipping line 92038: expected 8 fields, saw 9
+Skipping line 104319: expected 8 fields, saw 9
+Skipping line 121768: expected 8 fields, saw 9
+​
+Skipping line 144058: expected 8 fields, saw 9
+Skipping line 150789: expected 8 fields, saw 9
+Skipping line 157128: expected 8 fields, saw 9
+Skipping line 180189: expected 8 fields, saw 9
+Skipping line 185738: expected 8 fields, saw 9
+​
+Skipping line 209388: expected 8 fields, saw 9
+Skipping line 220626: expected 8 fields, saw 9
+Skipping line 227933: expected 8 fields, saw 11
+Skipping line 228957: expected 8 fields, saw 10
+Skipping line 245933: expected 8 fields, saw 9
+Skipping line 251296: expected 8 fields, saw 9
+Skipping line 259941: expected 8 fields, saw 9
+Skipping line 261529: expected 8 fields, saw 9
+​
+sys:1: DtypeWarning: Columns (3) have mixed types. Specify dtype option on import or set low_memory=False.
+​
+>>> 
+>>> books.columns = ['ISBN', 'bookTitle', 'bookAuthor', 'yearOfPublication', 'publisher', 'imageUrlS', 'imageUrlM', 'imageUrlL']
+>>> users = pd.read_csv('users.csv', sep=';', error_bad_lines=False, encoding="latin-1")
+>>> users.columns = ['userID', 'Location', 'Age']
+>>> ratings = pd.read_csv('ratings.csv', sep=';', error_bad_lines=False, encoding="latin-1")
+>>> ratings.columns = ['userID', 'ISBN', 'bookRating']
+>>> print books.shape
+(271360, 8)
+>>> print users.shape
+(278858, 3)
+>>> print ratings.shape
+(1149780, 3)
+>>> 
